@@ -1,0 +1,411 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="wrap_content"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1"
+        android:id="@+id/player_list">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.25"
+            android:layout_gravity="top|left"
+            android:id="@+id/player1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Player 1"
+                android:id="@+id/player1name"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/player1name"
+                android:id="@+id/player1buttonlayout">
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/plus1"
+                    android:id="@+id/player1add1"
+                    android:layout_below="@+id/player1name"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="false"
+                    android:clickable="false"
+                    android:contentDescription="@string/plus1"
+                    android:layout_alignParentBottom="true"
+                    android:layout_weight="0.25" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/plus5"
+                    android:id="@+id/player1add5"
+                    android:layout_alignTop="@+id/player1add1"
+                    android:layout_toRightOf="@+id/player1add1"
+                    android:layout_toEndOf="@+id/player1add1"
+                    android:contentDescription="@string/plus5"
+                    android:layout_alignParentBottom="true"
+                    android:layout_weight="0.25" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/sub1"
+                    android:id="@+id/player1sub1"
+                    android:layout_alignTop="@+id/player1add5"
+                    android:layout_toRightOf="@+id/player1add5"
+                    android:layout_toEndOf="@+id/player1add5"
+                    android:contentDescription="@string/sub1"
+                    android:layout_alignParentBottom="true"
+                    android:layout_weight="0.25" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/sub5"
+                    android:id="@+id/player1sub5"
+                    android:layout_alignTop="@+id/player1sub1"
+                    android:layout_toRightOf="@+id/player1sub1"
+                    android:layout_toEndOf="@+id/player1sub1"
+                    android:contentDescription="@string/sub5"
+                    android:layout_alignParentBottom="true"
+                    android:layout_weight="0.25" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/default_life"
+                android:id="@+id/player1_life"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.25"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/player2"
+            android:contentDescription="player2">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/player2name">
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/plus1"
+                    android:id="@+id/player2add1"
+                    android:layout_below="@+id/player2name"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="false"
+                    android:contentDescription="@string/plus1"
+                    android:layout_alignParentBottom="true"
+                    android:layout_weight="0.25" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/plus5"
+                    android:id="@+id/player2add5"
+                    android:layout_alignTop="@+id/player2add1"
+                    android:layout_toRightOf="@+id/player2add1"
+                    android:layout_toEndOf="@+id/player2add1"
+                    android:contentDescription="@string/plus5"
+                    android:layout_alignParentBottom="true"
+                    android:layout_weight="0.25" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/sub1"
+                    android:id="@+id/player2sub1"
+                    android:contentDescription="@string/sub1"
+                    android:layout_alignTop="@+id/player2add5"
+                    android:layout_toRightOf="@+id/player2add5"
+                    android:layout_toEndOf="@+id/player2add5"
+                    android:layout_alignParentBottom="true"
+                    android:layout_weight="0.25" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/sub5"
+                    android:id="@+id/player2sub5"
+                    android:contentDescription="@string/sub5"
+                    android:layout_alignTop="@+id/player2sub1"
+                    android:layout_toRightOf="@+id/player2sub1"
+                    android:layout_toEndOf="@+id/player2sub1"
+                    android:layout_alignParentBottom="true"
+                    android:layout_weight="0.25" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Player 2"
+                android:id="@+id/player2name"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/default_life"
+                android:id="@+id/player2_life"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.25"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/player3"
+            android:clickable="false"
+            android:contentDescription="player3">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/player3name">
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/plus1"
+                    android:id="@+id/player3add1"
+                    android:layout_below="@+id/player3name"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="false"
+                    android:contentDescription="@string/plus1"
+                    android:layout_alignParentBottom="true"
+                    android:layout_weight="0.25" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/plus5"
+                    android:id="@+id/player3add5"
+                    android:layout_alignTop="@+id/player3add1"
+                    android:layout_toRightOf="@+id/player3add1"
+                    android:layout_toEndOf="@+id/player3add1"
+                    android:contentDescription="@string/plus5"
+                    android:layout_alignParentBottom="true"
+                    android:layout_weight="0.25" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/sub1"
+                    android:id="@+id/player3sub1"
+                    android:layout_alignTop="@+id/player3add5"
+                    android:layout_toRightOf="@+id/player3add5"
+                    android:layout_toEndOf="@+id/player3add5"
+                    android:contentDescription="@string/sub1"
+                    android:layout_alignParentBottom="true"
+                    android:layout_weight="0.25" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/sub5"
+                    android:id="@+id/player3sub5"
+                    android:layout_toRightOf="@+id/player3sub1"
+                    android:layout_toEndOf="@+id/player3sub1"
+                    android:contentDescription="@string/sub5"
+                    android:layout_alignParentBottom="true"
+                    android:layout_weight="0.25" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Player 3"
+                android:id="@+id/player3name"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/default_life"
+                android:id="@+id/player3_life"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.25"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/player4"
+            android:contentDescription="player4">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/player4name">
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/plus1"
+                    android:id="@+id/player4add1"
+                    android:layout_below="@+id/player4name"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="false"
+                    android:contentDescription="@string/plus1"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_weight="0.25" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/plus5"
+                    android:id="@+id/player4add5"
+                    android:layout_alignTop="@+id/player4add1"
+                    android:layout_toRightOf="@+id/player4add1"
+                    android:layout_toEndOf="@+id/player4add1"
+                    android:contentDescription="@string/plus5"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_weight="0.25" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/sub1"
+                    android:id="@+id/player4sub1"
+                    android:layout_alignTop="@+id/player4add5"
+                    android:layout_toRightOf="@+id/player4add5"
+                    android:layout_toEndOf="@+id/player4add5"
+                    android:contentDescription="@string/sub1"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_weight="0.25" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/sub5"
+                    android:id="@+id/player4sub5"
+                    android:layout_alignTop="@+id/player4sub1"
+                    android:layout_toRightOf="@+id/player4sub1"
+                    android:layout_toEndOf="@+id/player4sub1"
+                    android:contentDescription="@string/sub5"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_weight="0.25" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Player 4"
+                android:id="@+id/player4name"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/default_life"
+                android:id="@+id/player4_life"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/loser"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/player_list"
+        android:layout_alignEnd="@+id/player_list"
+        android:autoText="false"
+        android:height="@android:dimen/app_icon_size"
+        android:singleLine="false"
+        android:textStyle="bold"
+        android:textSize="@dimen/abc_action_bar_progress_bar_size"
+        android:textAlignment="gravity"
+        android:gravity="center|right" />
+
+</RelativeLayout>
