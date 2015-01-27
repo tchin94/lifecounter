@@ -25,13 +25,6 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        if (savedInstanceState != null) {
-            player1 = savedInstanceState.getInt("player1");
-            player2 = savedInstanceState.getInt("player2");
-            player3 = savedInstanceState.getInt("player3");
-            player4 = savedInstanceState.getInt("player4");
-        }
-
         TextView p1Life = (TextView) findViewById(R.id.player1_life);
         p1Life.setText("Life: " + player1);
         TextView p2Life = (TextView) findViewById(R.id.player2_life);
