@@ -19,6 +19,7 @@ public class MainActivity extends ActionBarActivity {
     private static int player2 = STARTING_LIFE;
     private static int player3 = STARTING_LIFE;
     private static int player4 = STARTING_LIFE;
+    private static String loserSentence = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,9 @@ public class MainActivity extends ActionBarActivity {
         p3Life.setText("Life: " + player3);
         TextView p4Life = (TextView) findViewById(R.id.player4_life);
         p4Life.setText("Life: " + player4);
+
+        TextView loser = (TextView) findViewById(R.id.loser);
+        loser.setText(loserSentence);
 
         Button player1Add1 = (Button)findViewById(R.id.player1add1);
         player1Add1.setOnClickListener(clickHandlerPlayer1);
@@ -101,8 +105,7 @@ public class MainActivity extends ActionBarActivity {
         savedInstanceState.putInt("player2", player2);
         savedInstanceState.putInt("player3", player3);
         savedInstanceState.putInt("player4", player4);
-        TextView loser = (TextView) findViewById(R.id.loser);
-        savedInstanceState.putString("loser", loser.getText().toString());
+        savedInstanceState.putString("loser", loserSentence);
     }
 
     @Override
@@ -112,8 +115,7 @@ public class MainActivity extends ActionBarActivity {
         player2 = savedInstanceState.getInt("player2");
         player3 = savedInstanceState.getInt("player3");
         player4 = savedInstanceState.getInt("player4");
-        TextView loser = (TextView) findViewById(R.id.loser);
-        loser.setText(savedInstanceState.getString("loser"));
+        loserSentence = savedInstanceState.getString("loser");
     }
 
     private OnClickListener clickHandlerPlayer1 = new OnClickListener() {
@@ -131,7 +133,8 @@ public class MainActivity extends ActionBarActivity {
             }
             if (player1 <= 0) {
                 TextView loser = (TextView) findViewById(R.id.loser);
-                loser.setText("Player 1 LOSES!");
+                loserSentence = "Player 1 LOSES!";
+                loser.setText(loserSentence);
             }
             TextView lifePoints = (TextView) findViewById(R.id.player1_life);
             lifePoints.setText("Life: " + player1);
@@ -153,7 +156,8 @@ public class MainActivity extends ActionBarActivity {
             }
             if (player2 <= 0) {
                 TextView loser = (TextView) findViewById(R.id.loser);
-                loser.setText("Player 2 LOSES!");
+                loserSentence = "Player 2 LOSES!";
+                loser.setText(loserSentence);
             }
             TextView lifePoints = (TextView) findViewById(R.id.player2_life);
             lifePoints.setText("Life: " + player2);
@@ -175,7 +179,8 @@ public class MainActivity extends ActionBarActivity {
             }
             if (player3 <= 0) {
                 TextView loser = (TextView) findViewById(R.id.loser);
-                loser.setText("Player 3 LOSES!");
+                loserSentence = "Player 3 LOSES!";
+                loser.setText(loserSentence);
             }
             TextView lifePoints = (TextView) findViewById(R.id.player3_life);
             lifePoints.setText("Life: " + player3);
@@ -197,7 +202,8 @@ public class MainActivity extends ActionBarActivity {
             }
             if (player4 <= 0) {
                 TextView loser = (TextView) findViewById(R.id.loser);
-                loser.setText("Player 4 LOSES!");
+                loserSentence = "Player 4 LOSES!";
+                loser.setText(loserSentence);
             }
             TextView lifePoints = (TextView) findViewById(R.id.player4_life);
             lifePoints.setText("Life: " + player4);
